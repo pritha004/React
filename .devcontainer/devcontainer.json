@@ -11,7 +11,8 @@
 			"editor.wordWrap": "on",
 			"extensions": [
 				"dsznajder.es7-react-js-snippets",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"ritwickdey.LiveServer"
 			]
 		}
 	}
