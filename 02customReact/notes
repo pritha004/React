@@ -1,0 +1,21 @@
+- Bundlers(like babel) converts the jsx to more simpler syntax like we have declared in our custom react app as 'reactElement'. This custom way of creating element is defined by us.
+
+const reactElement={
+    type: 'a',
+    props: {
+        href: 'https://google.com',
+        target: '_blank'
+    },
+    children: 'Click me to visit google'
+}
+
+- Babel or other bundlers are used to convert JSX to JS. A simple 'a' tag gets converted in below code behind the scene. In React, we can also create the element using below method but a Bundler makes it simple for us by allowing to use JSX.
+
+const reactElement= React.createElement(
+    'a',
+    {
+        href: 'https://google.com',
+        target: '_blank'
+    },
+    "Click me to visit google"
+)
