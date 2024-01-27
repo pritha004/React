@@ -1,0 +1,46 @@
+--> What is reconciliation?- The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+
+Reconciliation is the algorithm behind what is popularly understood as the "virtual DOM." A high-level description goes something like this: when you render a React application, a tree of nodes that describes the app is generated and saved in memory. This tree is then flushed to the rendering environment — for example, in the case of a browser application, it's translated to a set of DOM operations. When the app is updated (usually via setState), a new tree is generated. The new tree is diffed with the previous tree to compute which operations are needed to update the rendered app.
+
+--> Fibre- A primary goal of Fiber is to enable React to take advantage of scheduling. Specifically, we need to be able to:
+    -pause work and come back to it later.
+    -assign priority to different types of work.
+    -reuse previously completed work.
+    -abort work if it's no longer needed.
+
+
+--> React Fiber is a new reconciler that was introduced in React 16.0. A reconciler is a component responsible for updating the virtual DOM and applying changes to the actual DOM. React Fiber is a complete rewrite of React's previous reconciler and is aimed at improving the performance of React applications, especially in areas such as animation and layout.
+
+React Fiber works by breaking down the rendering process into smaller, more manageable chunks and allowing React to schedule and process these chunks as needed, in a way that balances the need for smooth animation and efficient updates.
+
+React Fiber uses a priority-based scheduling system, where updates are divided into different priority levels, such as high, low, and deferred. Higher priority updates, such as user interactions or animations, are processed first, while lower priority updates, such as rendering updates for background tasks, are processed later.
+
+React Fiber also can pause, abort, and resume work on a component, allowing for greater control over the rendering process and ensuring that updates are performed smoothly and efficiently. This is particularly useful for complex animations or other tasks that require a lot of CPU time, as React Fiber can allocate resources accordingly to ensure the best possible performance.
+
+React Fiber is a major step forward for React, providing a more powerful and flexible reconciler that enables React applications to deliver better performance and a more engaging user experience.
+
+Features of React Fiber
+React Fiber includes several features that improve the performance and flexibility of React applications. Some of the key features of React Fiber include:
+
+-Asynchronous rendering:
+React Fiber allows for asynchronous rendering, which means that the rendering of a component can be split into multiple chunks and processed in the background. This is important for improving the performance of React applications, especially in areas such as animation.
+
+-Priority-based scheduling:
+React Fiber uses a priority-based scheduling system, where updates are divided into different priority levels, such as high, low, and deferred. This allows React to efficiently allocate resources and optimize the rendering process, improving the overall performance of the application.
+
+-Improved handling of server-side rendering:
+React Fiber includes improvements to the handling of server-side rendering, making it easier to use React in a server-side environment and improving the performance of server-side rendering.
+
+-Better error handling:
+React Fiber includes improved error handling, making it easier to debug and fix issues in React applications.
+Intuitive and flexible API for defining animations:
+React Fiber includes a more intuitive and flexible API for defining animations and other complex UI interactions, making it easier to create engaging and dynamic user interfaces.
+
+-Fine-grained updates:
+React Fiber allows for fine-grained updates, which means that React can update individual parts of a component's UI, rather than having to re-render the entire component. This results in more efficient updates and improved performance.
+
+-Improved memory usage:
+React Fiber includes improvements to memory usage, making it possible to render larger and more complex applications while using less memory.
+
+-Better support for progressive loading:
+React Fiber includes improved support for progressive loading, making it easier to create applications that load quickly and provide a smooth user experience.
