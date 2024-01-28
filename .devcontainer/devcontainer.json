@@ -12,7 +12,8 @@
 			"extensions": [
 				"dsznajder.es7-react-js-snippets",
 				"esbenp.prettier-vscode",
-				"ritwickdey.LiveServer"
+				"ritwickdey.LiveServer",
+				"bradlc.vscode-tailwindcss"
 			]
 		}
 	}
