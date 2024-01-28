@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 
+// eslint-disable-next-line react/prop-types
 const Card = ({ username, bio="Hi Everyone!" }) => {
   return (
     <div className="relative h-[400px] w-[300px] rounded-md m-4">
