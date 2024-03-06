@@ -72,7 +72,9 @@ const PostForm = ({ post }) => {
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      subscription.unsubscribe();
+    };
   }, [watch, slugTransform, setValue]);
 
   return (
