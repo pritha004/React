@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { Provider } from 'react-redux'
-import store from './store/store.js'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import { AuthLayout, Login } from './components/index.js'
+import { Provider } from 'react-redux';
+import store from './store/store.js';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import { AuthLayout } from './components/index.js';
 
-
+import Login from "./pages/Login.jsx"
 import AddPost from "./pages/AddPost";
 import Signup from './pages/Signup'
 import EditPost from "./pages/EditPost";
