@@ -18,9 +18,10 @@ const PostForm = ({ post }) => {
     });
 
   const navigate = useNavigate();
-  const userData = useSelector((state) => state.user.userData);
+  const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
+    console.log("clicked",data);
     if (post) {
       const file = data.image[0] ? service.uploadFile(data.image[0]) : null;
 
@@ -42,27 +43,35 @@ const PostForm = ({ post }) => {
       if (file) {
         const fileId = file.$id;
         data.featuredImage = fileId;
-        const dbPost = await service.createPost({
-          ...data,
-          userId: userData.$id,
-        });
+        // const dbPost = await service.createPost({
+        //   ...data,
+        //   userId: userData.$id,
+        // });
 
-        if (dbPost) {
-          navigate(`/post/${dbPost.$id}`);
-        }
+        // if (dbPost) {
+        //   navigate(`/post/${dbPost.$id}`);
+        // }
+      }
+      const dbPost = await service.createPost({
+        ...data,
+        userId: userData.$id,
+      });
+
+      if (dbPost) {
+        navigate(`/post/${dbPost.$id}`);
       }
     }
   };
 
   const slugTransform = useCallback((value) => {
-    if (value && typeof value === "string") {
+    if (value && typeof value === "string")
       return value
         .trim()
         .toLowerCase()
-        .replace(/^[a-zA-Z\d]+/g, "-");
-    } else {
-      return "";
-    }
+        .replace(/[^a-zA-Z\d\s]+/g, "-")
+        .replace(/\s/g, "-");
+
+    return "";
   }, []);
 
   useEffect(() => {
@@ -110,7 +119,7 @@ const PostForm = ({ post }) => {
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
-          {...register("image", { required: !post })}
+          {...register("image")}
         />
         {post && (
           <div className="w-full mb-4">
